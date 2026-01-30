@@ -2,6 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const db = require('../db');
 const { authenticate, generateToken } = require('../middleware/auth');
+const { isAdmin } = require('../middleware/adminAuth');
 
 const router = express.Router();
 
@@ -85,7 +86,8 @@ router.post('/login', async (req, res) => {
         email: user.email,
         name: user.name,
         businessName: user.business_name,
-        subscriptionStatus: user.subscription_status
+        subscriptionStatus: user.subscription_status,
+        isAdmin: isAdmin(user.email)
       },
       token
     });
@@ -119,6 +121,7 @@ router.get('/me', authenticate, async (req, res) => {
         name: req.user.name,
         businessName: req.user.business_name,
         subscriptionStatus: req.user.subscription_status,
+        isAdmin: isAdmin(req.user.email),
         quoteCount,
         quotesRemaining: req.user.subscription_status === 'active' ? 'unlimited' : Math.max(0, 3 - quoteCount),
         branding: {
