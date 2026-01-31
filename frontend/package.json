@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "CleanlyQuote - Professional Cleaning Estimates SaaS",
   "scripts": {
-    "start": "serve -c serve.json -l ${PORT:-3000}"
+    "start": "node server.js"
   },
   "dependencies": {
-    "serve": "^14.2.1"
+    "serve-handler": "^6.1.5"
   },
   "engines": {
     "node": ">=18"
