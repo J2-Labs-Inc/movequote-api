@@ -35,10 +35,10 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 
 # Email Service (optional but recommended)
 RESEND_API_KEY=re_...
-FROM_EMAIL=hello@getcleanlyquote.com
+FROM_EMAIL=hello@getmovequote.com
 
 # Frontend
-FRONTEND_URL=https://getcleanlyquote.com
+FRONTEND_URL=https://getmovequote.com
 
 # Port (automatically set by Railway)
 PORT=3000
