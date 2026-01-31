@@ -3,13 +3,19 @@ const http = require('http');
 
 const server = http.createServer((request, response) => {
   // Custom rewrite logic for proposal routes
-  if (request.url.startsWith('/proposal/') && request.url !== '/proposal') {
+  // Store original URL for client-side JavaScript
+  const originalUrl = request.url;
+  
+  if (originalUrl.startsWith('/proposal/') && originalUrl !== '/proposal') {
     request.url = '/proposal.html';
   }
   
   return handler(request, response, {
     public: 'public',
-    cleanUrls: true,
+    cleanUrls: [
+      '/app/**',
+      '/!proposal/**'  // Exclude proposal routes from cleanUrls
+    ],
     directoryListing: false,
     headers: [
       {
