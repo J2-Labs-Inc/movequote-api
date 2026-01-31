@@ -1,0 +1,14 @@
+{
+  "name": "cleanlyquote",
+  "version": "1.0.0",
+  "description": "CleanlyQuote - Professional Cleaning Estimates SaaS",
+  "scripts": {
+    "start": "serve -c serve.json -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

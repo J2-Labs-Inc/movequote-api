@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Proposal - CleanlyQuote</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --red-500: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--gray-50);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .proposal {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .proposal-header {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .proposal-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .proposal-header .company-name {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .business-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: white;
+            margin-bottom: 1rem;
+        }
+        
+        .proposal-body {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section h3 {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .info-item label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            display: block;
+        }
+        
+        .info-item p {
+            font-weight: 500;
+            color: var(--gray-900);
+        }
+        
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .services-table th,
+        .services-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .services-table th {
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+        
+        .total-row {
+            background: #d1fae5;
+            font-weight: 700;
+        }
+        
+        .total-row td {
+            color: var(--primary-dark);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: white;
+            color: var(--gray-700);
+            border: 2px solid var(--gray-300);
+        }
+        
+        .btn-outline:hover {
+            background: var(--gray-50);
+        }
+        
+        .approved-badge {
+            background: #d1fae5;
+            color: #059669;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 4rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gray-200);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            text-align: center;
+            padding: 4rem;
+            color: var(--red-500);
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+        }
+        
+        .toast.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+            to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .modal h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .modal textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            resize: vertical;
+        }
+        
+        .modal .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        @media print {
+            .action-buttons, .footer { display: none; }
+            .proposal { box-shadow: none; }
+            body { background: white; }
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            .proposal-header, .proposal-body { padding: 1.5rem; }
+            .action-buttons { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading proposal...</p>
+        </div>
+        
+        <!-- Error State -->
+        <div id="error" class="error" style="display: none;">
+            <div class="error-icon">😕</div>
+            <h2>Proposal Not Found</h2>
+            <p id="error-message">This proposal link may be invalid or expired.</p>
+        </div>
+        
+        <!-- Proposal Content -->
+        <div id="proposal-content" style="display: none;">
+            <div class="proposal">
+                <div class="proposal-header" id="proposal-header">
+                    <img id="business-logo" class="business-logo" style="display: none;">
+                    <h1>Cleaning Service Proposal</h1>
+                    <div class="company-name" id="business-name"></div>
+                </div>
+                
+                <div class="proposal-body">
+                    <div class="section">
+                        <h3>Client Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Client Name</label>
+                                <p id="client-name"></p>
+                            </div>
+                            <div class="info-item">
+                                <label>Property Address</label>
+                                <p id="property-address"></p>
+                            </div>
+                            <div class="info-item">
+                                <label>Date</label>
+                                <p id="quote-date"></p>
+                            </div>
+                            <div class="info-item" id="scheduled-info" style="display: none;">
+                                <label>Scheduled</label>
+                                <p id="scheduled-date"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>Service Details</h3>
+                        <table class="services-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Description</th>
+                                    <th style="text-align: right;">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="services-body">
+                            </tbody>
+                            <tfoot>
+                                <tr class="total-row">
+                                    <td colspan="2"><strong>Total Amount</strong></td>
+                                    <td style="text-align: right;"><strong id="total-price"></strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    
+                    <div class="section" id="notes-section" style="display: none;">
+                        <h3>Notes</h3>
+                        <p id="quote-notes"></p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>Terms & Conditions</h3>
+                        <ul style="color: var(--gray-600); padding-left: 1.5rem;">
+                            <li>Payment is due upon completion of services</li>
+                            <li>Client must provide access to property at scheduled time</li>
+                            <li>Cancellations require 24-hour notice</li>
+                            <li>We are fully insured and bonded</li>
+                        </ul>
+                    </div>
+                    
+                    <p style="text-align: center; color: var(--gray-500); margin-top: 2rem;">
+                        <em>This proposal is valid for 30 days from the date above.</em>
+                    </p>
+                    
+                    <div id="approved-section" style="display: none;">
+                        <div class="approved-badge">
+                            ✓ Proposal Approved on <span id="approved-date"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="action-section">
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="approveProposal()">✓ Accept Proposal</button>
+                            <button class="btn btn-outline" onclick="showChangesModal()">Request Changes</button>
+                            <button class="btn btn-outline" onclick="window.print()">🖨️ Print</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Powered by <a href="https://getcleanlyquote.com">CleanlyQuote</a>
+        </div>
+    </div>
+    
+    <!-- Changes Modal -->
+    <div class="modal-overlay" id="changes-modal">
+        <div class="modal">
+            <h3>Request Changes</h3>
+            <p style="margin-bottom: 1rem; color: var(--gray-600);">Please describe the changes you'd like:</p>
+            <textarea id="changes-message" placeholder="e.g., Can you add window cleaning? Can we change the date?"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="submitChanges()">Submit Request</button>
+                <button class="btn btn-outline" onclick="hideChangesModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+    
+    <script>
+        const API_URL = 'https://api-production-9bf9.up.railway.app';
+        let shareToken = null;
+        let quoteData = null;
+        
+        // Get share token from URL
+        document.addEventListener('DOMContentLoaded', async function() {
+            const path = window.location.pathname;
+            const match = path.match(/\/proposal\/([a-f0-9-]+)/i);
+            
+            if (match) {
+                shareToken = match[1];
+                await loadProposal();
+            } else {
+                showError('Invalid proposal link');
+            }
+        });
+        
+        async function loadProposal() {
+            try {
+                const response = await fetch(`${API_URL}/api/quotes/public/${shareToken}`);
+                
+                if (response.status === 404) {
+                    showError('This proposal was not found or the link is invalid.');
+                    return;
+                }
+                
+                if (response.status === 410) {
+                    showError('This proposal link has expired.');
+                    return;
+                }
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load proposal');
+                }
+                
+                const data = await response.json();
+                quoteData = data.quote;
+                const business = data.business;
+                
+                // Apply branding
+                const header = document.getElementById('proposal-header');
+                header.style.background = business.brandColor || '#10b981';
+                
+                if (business.logo) {
+                    const logo = document.getElementById('business-logo');
+                    logo.src = business.logo;
+                    logo.style.display = 'block';
+                }
+                
+                document.getElementById('business-name').textContent = business.name || 'Cleaning Service';
+                
+                // Fill quote data
+                document.getElementById('client-name').textContent = quoteData.clientName || '-';
+                document.getElementById('property-address').textContent = quoteData.propertyAddress || '-';
+                document.getElementById('quote-date').textContent = formatDate(quoteData.createdAt);
+                
+                // Scheduled date
+                if (quoteData.scheduledDate) {
+                    document.getElementById('scheduled-info').style.display = 'block';
+                    document.getElementById('scheduled-date').textContent = formatDate(quoteData.scheduledDate) + (quoteData.scheduledTime ? ' at ' + quoteData.scheduledTime : '');
+                }
+                
+                // Services
+                const servicesBody = document.getElementById('services-body');
+                let html = `<tr>
+                    <td>${capitalize(quoteData.serviceType || 'Standard')} Clean</td>
+                    <td>${capitalize(quoteData.propertyType || 'Residential')} property${quoteData.frequency ? ' - ' + quoteData.frequency : ''}</td>
+                    <td style="text-align: right;">$${(quoteData.basePrice || 0).toFixed(2)}</td>
+                </tr>`;
+                
+                if (quoteData.addonsPrice > 0) {
+                    html += `<tr>
+                        <td>Add-on Services</td>
+                        <td>Additional cleaning services</td>
+                        <td style="text-align: right;">$${quoteData.addonsPrice.toFixed(2)}</td>
+                    </tr>`;
+                }
+                
+                if (quoteData.discountAmount > 0) {
+                    html += `<tr>
+                        <td>Discount</td>
+                        <td>${quoteData.discountPercent ? quoteData.discountPercent + '% ' : ''}Frequency discount</td>
+                        <td style="text-align: right; color: #059669;">-$${quoteData.discountAmount.toFixed(2)}</td>
+                    </tr>`;
+                }
+                
+                if (quoteData.taxAmount > 0) {
+                    html += `<tr>
+                        <td>Tax</td>
+                        <td>${quoteData.taxRate ? quoteData.taxRate + '% ' : ''}Sales tax</td>
+                        <td style="text-align: right;">$${quoteData.taxAmount.toFixed(2)}</td>
+                    </tr>`;
+                }
+                
+                servicesBody.innerHTML = html;
+                document.getElementById('total-price').textContent = '$' + (quoteData.totalPrice || 0).toFixed(2);
+                
+                // Notes
+                if (quoteData.notes) {
+                    document.getElementById('notes-section').style.display = 'block';
+                    document.getElementById('quote-notes').textContent = quoteData.notes;
+                }
+                
+                // Approved status
+                if (quoteData.clientApproved) {
+                    document.getElementById('action-section').style.display = 'none';
+                    document.getElementById('approved-section').style.display = 'block';
+                    document.getElementById('approved-date').textContent = formatDate(quoteData.clientApprovedAt);
+                }
+                
+                // Show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('proposal-content').style.display = 'block';
+                
+            } catch (err) {
+                console.error('Load proposal error:', err);
+                showError('Failed to load proposal. Please try again.');
+            }
+        }
+        
+        async function approveProposal() {
+            if (!confirm('Are you sure you want to approve this proposal?')) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/quotes/public/${shareToken}/approve`, {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to approve');
+                }
+                
+                showToast('Proposal approved! Thank you.');
+                document.getElementById('action-section').style.display = 'none';
+                document.getElementById('approved-section').style.display = 'block';
+                document.getElementById('approved-date').textContent = formatDate(new Date());
+            } catch (err) {
+                console.error('Approve error:', err);
+                showToast(err.message || 'Failed to approve. Please try again.', true);
+            }
+        }
+        
+        function showChangesModal() {
+            document.getElementById('changes-modal').classList.add('show');
+        }
+        
+        function hideChangesModal() {
+            document.getElementById('changes-modal').classList.remove('show');
+        }
+        
+        async function submitChanges() {
+            const message = document.getElementById('changes-message').value.trim();
+            
+            if (!message) {
+                showToast('Please describe the changes you need.', true);
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_URL}/api/quotes/public/${shareToken}/request-changes`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to submit');
+                }
+                
+                hideChangesModal();
+                showToast('Your request has been submitted. They will get back to you soon.');
+                document.getElementById('changes-message').value = '';
+            } catch (err) {
+                console.error('Changes error:', err);
+                showToast(err.message || 'Failed to submit. Please try again.', true);
+            }
+        }
+        
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error-message').textContent = message;
+        }
+        
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.background = isError ? '#ef4444' : '#10b981';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+        
+        function formatDate(dateStr) {
+            if (!dateStr) return '-';
+            const date = new Date(dateStr);
+            if (isNaN(date.getTime())) return '-';
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        
+        function capitalize(str) {
+            if (!str) return '';
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    </script>
+</body>
+</html>

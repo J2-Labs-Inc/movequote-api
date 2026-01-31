@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Losing Cleaning Jobs to Slow Quotes | CleanlyQuote</title>
+    <meta name="description" content="Send branded cleaning proposals in 30 seconds — before your competitor even picks up a pen. Free plan, no credit card. Built for residential and commercial cleaners.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2310b981'/%3E%3Cpath d='M12 17l2 2-8 8c-.7.7-1.8.7-2.5 0s-.7-1.8 0-2.5L12 17zm-5-3l8-8c.7-.7 1.8-.7 2.5 0s.7 1.8 0 2.5L10 16 7 14z' fill='white'/%3E%3Ccircle cx='22' cy='7' r='3' fill='white'/%3E%3Ccircle cx='17' cy='5' r='2' fill='white' opacity='.7'/%3E%3Cpath d='M24 27l2.5-10-3-3L20 17l4 10z' fill='white'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%2310b981'/%3E%3Cpath d='M67 96l11 11-45 45c-4 4-10 4-14 0s-4-10 0-14L67 96zm-28-17l45-45c4-4 10-4 14 0s4 10 0 14L56 90 39 79z' fill='white'/%3E%3Ccircle cx='124' cy='39' r='17' fill='white'/%3E%3Ccircle cx='96' cy='28' r='11' fill='white' opacity='.7'/%3E%3Cpath d='M135 152l14-56-17-17-17 22 20 51z' fill='white'/%3E%3C/svg%3E">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleanlyquote.com/">
+    <meta property="og:title" content="CleanlyQuote — Professional Cleaning Estimates in 30 Seconds">
+    <meta property="og:description" content="Send branded cleaning proposals before your competitor picks up a pen. Free forever plan, no credit card required.">
+    <meta property="og:image" content="https://cleanlyquote.com/og-image.png">
+    <meta property="og:site_name" content="CleanlyQuote">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CleanlyQuote — Professional Cleaning Estimates in 30 Seconds">
+    <meta name="twitter:description" content="Send branded cleaning proposals before your competitor picks up a pen. Free forever plan.">
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CleanlyQuote">
+    <meta name="keywords" content="cleaning estimate software, cleaning business software, cleaning proposal, cleaning quote, cleaning service management">
+    <link rel="canonical" href="https://cleanlyquote.com/">
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        img, video, iframe, object, embed {
+            max-width: 100%;
+            height: auto;
+        }
+
+        section {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .header-sticky-cta {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .header-sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .exit-intent-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            z-index: 101;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .exit-intent-bar.visible {
+            transform: translateY(0);
+        }
+
+        .exit-intent-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .exit-intent-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.25rem;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+            position: relative;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .hero .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .hero .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+            background: var(--gray-50);
+            border-color: var(--gray-400);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, var(--primary), #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        /* Interactive Demo */
+        .demo-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .demo-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-content p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .calculator {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .calc-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-group input,
+        .calc-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            min-height: 44px;
+        }
+
+        .calc-group input:focus,
+        .calc-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .addon-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .addon-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .addon-item:hover {
+            background: var(--gray-50);
+        }
+
+        .addon-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .addon-item label {
+            cursor: pointer;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .estimate-result {
+            background: var(--primary-light);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .estimate-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 4rem 0;
+            background: var(--gray-50);
+        }
+
+        .stats-section {
+            padding: 2.5rem 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .stats-content {
+            text-align: center;
+        }
+
+        .industry-note {
+            color: var(--gray-600);
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .industry-note span {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .social-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .social-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .social-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .author-info p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .features-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .features-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .feature:hover {
+            background: var(--gray-50);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-light);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .feature:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 5rem 0;
+            background: var(--gray-50);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: var(--gray-300);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(30px);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card > p {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-period {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-700);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .faq-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 44px;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 0 1.5rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            font-size: 0.875rem;
+        }
+
+        .faq-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta .btn:hover {
+            background: var(--gray-100);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.2s;
+            padding: 0.25rem 0;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { 
+                box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4); 
+            }
+            50% { 
+                box-shadow: 0 8px 32px rgba(16, 185, 129, 0.6); 
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero .btn-primary {
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+
+        .hero .btn-primary:hover {
+            animation: none;
+        }
+
+        /* Mobile Responsive */
+        /* Mobile hamburger menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-700);
+            cursor: pointer;
+            padding: 0.5rem;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header CTA container - give it a class for easier targeting */
+        .header-cta-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 99;
+            animation: slideDown 0.2s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-nav.show {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-nav-links li {
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .mobile-nav-links li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav-links a {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            min-height: 48px;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .mobile-nav-links a:hover,
+        .mobile-nav-links a:active {
+            background: var(--gray-50);
+            color: var(--primary);
+        }
+
+        .mobile-nav-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .mobile-nav-cta .btn {
+            width: 100%;
+            justify-content: center;
+            min-height: 48px;
+            font-size: 1rem;
+        }
+
+        /* ============================================
+           MOBILE STYLES (< 768px)
+           ============================================ */
+        @media (max-width: 768px) {
+            /* Container & Layout */
+            .container {
+                padding: 0 20px;
+            }
+
+            /* Header - Clean mobile header */
+            nav {
+                padding: 0.875rem 0;
+            }
+
+            .nav-links {
+                display: none !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            /* Hide all header CTA buttons on mobile */
+            .header-cta-container {
+                display: none !important;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .logo svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Hero Section - Mobile */
+            .hero {
+                padding: 5rem 0 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.875rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+
+            .hero-cta .btn-lg {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .hero-benefits {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+                margin-top: 1.5rem !important;
+            }
+
+            .hero-benefits > div {
+                font-size: 0.875rem !important;
+            }
+
+            .hero-services {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+                margin-top: 1.25rem !important;
+            }
+
+            .service-avatars {
+                margin-right: 0 !important;
+                justify-content: center !important;
+            }
+
+            /* Social Proof Stats */
+            .social-proof {
+                padding: 2.5rem 0;
+            }
+
+            .stats-section {
+                padding: 2rem 0;
+            }
+
+            .social-stats {
+                flex-direction: column;
+                gap: 1.25rem;
+            }
+
+            .stat-number {
+                font-size: 1.875rem;
+            }
+
+            .stat-label {
+                font-size: 0.875rem;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+
+            .industry-note {
+                font-size: 0.875rem;
+                margin-top: 1.25rem;
+            }
+
+            /* Demo Section */
+            .demo-section {
+                padding: 2.5rem 0;
+            }
+
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .demo-content h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .demo-content p {
+                font-size: 1rem;
+            }
+
+            .demo-content ul {
+                font-size: 0.9375rem;
+            }
+
+            .calculator {
+                padding: 1.5rem;
+                border-radius: 0.75rem;
+            }
+
+            .calculator h3 {
+                font-size: 1.25rem;
+            }
+
+            .calc-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .calc-group input,
+            .calc-group select {
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 16px; /* Prevent iOS zoom */
+            }
+
+            .addon-list {
+                grid-template-columns: 1fr;
+            }
+
+            .estimate-result {
+                padding: 1.25rem;
+            }
+
+            .estimate-price {
+                font-size: 2rem !important;
+            }
+
+            /* Testimonials */
+            .testimonials {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .testimonial {
+                padding: 1.5rem;
+            }
+
+            .testimonial-content {
+                font-size: 0.9375rem;
+                line-height: 1.7;
+            }
+
+            /* Pain/Solution Section */
+            .pain-solution-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .pain-solution-grid > div > div {
+                padding: 1.5rem !important;
+            }
+
+            .pain-solution-grid h3 {
+                font-size: 1.125rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .pain-solution-grid span {
+                font-size: 0.9375rem !important;
+            }
+
+            /* Features Section */
+            .features {
+                padding: 2.5rem 0;
+            }
+
+            .features-header h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .features-header p {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature {
+                padding: 1.25rem;
+            }
+
+            .feature-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature h3 {
+                font-size: 1.125rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .feature p {
+                font-size: 0.9375rem;
+            }
+
+            /* Pricing Section */
+            .pricing {
+                padding: 2.5rem 0;
+            }
+
+            .pricing-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .pricing-header > p {
+                font-size: 1rem !important;
+            }
+
+            .pricing-toggle {
+                flex-direction: row;
+                gap: 0.75rem;
+                align-items: center;
+            }
+
+            .pricing-toggle span {
+                font-size: 0.875rem;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-4px);
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+
+            .pricing-features li {
+                font-size: 0.9375rem;
+            }
+
+            /* FAQ Section */
+            .faq {
+                padding: 2.5rem 0;
+            }
+
+            .faq-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.25rem 0;
+                min-height: 48px;
+            }
+
+            .faq-answer {
+                font-size: 0.9375rem;
+            }
+
+            /* CTA Section */
+            .cta {
+                padding: 3rem 0;
+            }
+
+            .cta h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta .btn-lg {
+                font-size: 1rem !important;
+                padding: 1rem 1.5rem !important;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+
+            .footer-section h4 {
+                font-size: 1rem;
+            }
+
+            .footer-section a {
+                font-size: 0.9375rem;
+                padding: 0.5rem 0;
+            }
+
+            /* Exit Intent Bar */
+            .exit-intent-bar {
+                padding: 1rem;
+            }
+
+            .exit-intent-content {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+
+            .exit-intent-content span {
+                font-size: 0.875rem;
+            }
+
+            /* Buttons - Touch targets */
+            .btn {
+                min-height: 48px;
+                min-width: 48px;
+            }
+
+            .btn-lg {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            /* Prevent overflow */
+            * {
+                max-width: 100vw;
+            }
+
+            /* Section spacing */
+            section {
+                overflow-x: hidden;
+            }
+        }
+
+        /* ============================================
+           TABLET STYLES (769px - 1024px)
+           ============================================ */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .container {
+                padding: 0 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-container {
+                gap: 3rem;
+            }
+        }
+
+        /* ============================================
+           SMALL MOBILE STYLES (< 375px)
+           ============================================ */
+        @media (max-width: 374px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.625rem;
+            }
+
+            .hero p {
+                font-size: 0.9375rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .pricing-price {
+                font-size: 2.25rem;
+            }
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gray-200);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success animation */
+        @keyframes successPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-animation {
+            animation: successPop 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.5 13.09l1.41 1.41-6.36 6.37c-.55.55-1.44.55-2 0-.55-.55-.55-1.44 0-2L9.5 13.09zM5.5 11.09l6.36-6.37c.55-.55 1.44-.55 2 0 .55.55.55 1.44 0 2L7.91 12.5 5.5 11.09z" fill="currentColor"/>
+                    <path d="M17.5 8c1.38 0 2.5-1.12 2.5-2.5S18.88 3 17.5 3 15 4.12 15 5.5 16.12 8 17.5 8z" fill="currentColor"/>
+                    <path d="M12.5 4.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z" fill="currentColor"/>
+                    <path d="M19 21l2-8-2.5-2.5L16 13l3 8z" fill="currentColor"/>
+                </svg>
+                CleanlyQuote
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="header-cta-container">
+                <a href="auth.html?mode=login" class="btn btn-outline">Sign In</a>
+                <a href="auth.html?mode=signup" class="btn btn-primary">Start Free</a>
+                <a href="auth.html?mode=signup" class="btn btn-primary header-sticky-cta" id="header-sticky-cta">Start Free</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+        </nav>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="#features" onclick="closeMobileMenu()">Features</a></li>
+                <li><a href="#pricing" onclick="closeMobileMenu()">Pricing</a></li>
+                <li><a href="#faq" onclick="closeMobileMenu()">FAQ</a></li>
+            </ul>
+            <div class="mobile-nav-cta">
+                <a href="auth.html?mode=login" class="btn btn-outline">Sign In</a>
+                <a href="auth.html?mode=signup" class="btn btn-primary">Start Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>You're Losing Jobs While You're <span class="hero-highlight">Still Writing Quotes</span></h1>
+                <p>Your competitor just sent a branded proposal from their truck. You're still doing math on a notepad. In a $108 billion industry with over 1 million businesses, the cleaner who quotes fastest wins. CleanlyQuote gives you professional estimates in 30 seconds.</p>
+                <div class="hero-cta">
+                    <a href="auth.html?mode=signup" class="btn btn-primary btn-lg">Create Your First Estimate — It's Free</a>
+                </div>
+                <p style="color: var(--gray-500); font-size: 0.85rem; margin-top: 0.5rem; text-align: center;">No credit card. No trial that expires. Free plan forever.</p>
+                <div class="hero-benefits" style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600); font-size: 0.9rem;">
+                        <span style="color: var(--primary);">✓</span> No credit card required
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600); font-size: 0.9rem;">
+                        <span style="color: var(--primary);">✓</span> Free forever plan
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600); font-size: 0.9rem;">
+                        <span style="color: var(--primary);">✓</span> Set up in 2 minutes
+                    </div>
+                </div>
+                <div class="hero-services" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                    <div class="service-avatars" style="display: flex; margin-right: 0.5rem;">
+                        <div style="width: 32px; height: 32px; background: #10b981; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem;">🏠</div>
+                        <div style="width: 32px; height: 32px; background: #3b82f6; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem;">🏢</div>
+                        <div style="width: 32px; height: 32px; background: #8b5cf6; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem;">🏨</div>
+                    </div>
+                    <div style="color: var(--gray-700); font-size: 0.9rem;">
+                        Residential · Commercial · Airbnb · Move-out
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Stats -->
+    <section class="social-proof stats-section">
+        <div class="container">
+            <div class="stats-content">
+                <div class="social-stats">
+                    <div class="stat">
+                        <div class="stat-number">30 sec</div>
+                        <div class="stat-label">From blank page to branded proposal</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5 templates</div>
+                        <div class="stat-label">Standard, Deep, Move-out, Commercial, Airbnb</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" style="color: var(--primary);">100% Free</div>
+                        <div class="stat-label">No credit card. No catch. No expiration.</div>
+                    </div>
+                </div>
+                <p class="industry-note">Built for the $108B cleaning industry <span>(IBISWorld, 2025)</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-content">
+                    <h2>See How Easy It Is</h2>
+                    <p>Our smart calculator takes the guesswork out of pricing. Just enter a few details and get an instant professional estimate that you can send to your clients.</p>
+                    <ul style="list-style: none; color: var(--gray-600); line-height: 2;">
+                        <li>✓ Automatic pricing based on property type</li>
+                        <li>✓ Add-on services with custom pricing</li>
+                        <li>✓ Frequency discounts built-in</li>
+                        <li>✓ Instantly generate PDF proposals</li>
+                    </ul>
+                </div>
+                <div class="calculator">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--gray-800);">Quick Estimate Calculator</h3>
+                    <div class="calc-group">
+                        <label for="property-type">Property Type</label>
+                        <select id="property-type">
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="airbnb">Airbnb/Vacation Rental</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label for="square-footage">Square Footage</label>
+                        <input type="number" id="square-footage" placeholder="e.g. 1500" value="1500" min="0" max="100000">
+                    </div>
+                    <div class="calc-group">
+                        <label for="service-type">Service Type</label>
+                        <select id="service-type">
+                            <option value="standard">Standard Clean</option>
+                            <option value="deep">Deep Clean</option>
+                            <option value="move-out">Move-in/Move-out</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label for="frequency">Frequency</label>
+                        <select id="frequency">
+                            <option value="one-time">One-time</option>
+                            <option value="weekly">Weekly (15% off)</option>
+                            <option value="biweekly">Bi-weekly (10% off)</option>
+                            <option value="monthly">Monthly (5% off)</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label>Add-on Services</label>
+                        <div class="addon-list">
+                            <div class="addon-item">
+                                <input type="checkbox" id="fridge" data-price="25">
+                                <label for="fridge">Inside Fridge (+$25)</label>
+                            </div>
+                            <div class="addon-item">
+                                <input type="checkbox" id="oven" data-price="25">
+                                <label for="oven">Inside Oven (+$25)</label>
+                            </div>
+                            <div class="addon-item">
+                                <input type="checkbox" id="windows" data-price="50">
+                                <label for="windows">Interior Windows (+$50)</label>
+                            </div>
+                            <div class="addon-item">
+                                <input type="checkbox" id="laundry" data-price="30">
+                                <label for="laundry">Laundry (+$30)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="estimate-result">
+                        <p style="color: var(--gray-700); margin: 0 0 0.5rem 0; font-weight: 500;">You'd charge:</p>
+                        <div class="estimate-price" id="estimate-price" style="font-size: 2.5rem; color: var(--primary); background: linear-gradient(135deg, var(--primary), #0891b2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">$150</div>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(16, 185, 129, 0.2);">
+                            <p style="color: var(--gray-600); margin: 0 0 0.75rem 0; font-size: 0.9rem;">Want to send this estimate to a client?</p>
+                            <a href="auth.html?mode=signup" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">→ Start Free</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-header">
+                <h2>Three Reasons You're Leaving Money on the Table</h2>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <strong>You're too slow.</strong> A homeowner requests 3 quotes. The first one to reply gets the walkthrough. The other two get ghosted. Research from MIT shows your odds of reaching a lead drop <strong>10x after the first hour</strong>. If you're spending 15 minutes on pen-and-paper math, you're handing jobs to whoever texts back faster. CleanlyQuote takes 30 seconds. <span style="font-size: 0.75rem; color: var(--gray-400);">(MIT/InsideSales.com Lead Response Study)</span>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">⚡</div>
+                        <div class="author-info">
+                            <h4>Speed Kills the Competition</h4>
+                            <p>First quote in → first job booked</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <strong>You look small.</strong> A handwritten quote on a scrap of paper next to a branded PDF with your logo, itemized pricing, terms & conditions, and a green "Accept Proposal" button? The client picks the one that looks like a real business. That should be you.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">✨</div>
+                        <div class="author-info">
+                            <h4>Look Like a Franchise on Day One</h4>
+                            <p>Your proposal is your first impression — make it count</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <strong>You're undercharging.</strong> Did you remember to add the inside fridge? The oven? Windows? When you price from memory, you forget line items. CleanlyQuote's built-in add-ons and room-by-room pricing means every estimate is complete, consistent, and profitable.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">💰</div>
+                        <div class="author-info">
+                            <h4>Stop Leaving $25–$100 Per Job</h4>
+                            <p>Every forgotten add-on is money you earned but didn't charge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain → Solution Framework -->
+    <section style="padding: 4rem 0; background: var(--gray-50);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">Your notepad is costing you clients</h2>
+                <div class="pain-solution-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: center;">
+                    <div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                            <h3 style="color: #dc2626; font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">This is why clients ghost you:</h3>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: #dc2626; font-weight: 600; margin-top: 0.125rem;">❌</span>
+                                    <span style="color: var(--gray-700);">Spending 20+ minutes on each estimate</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: #dc2626; font-weight: 600; margin-top: 0.125rem;">❌</span>
+                                    <span style="color: var(--gray-700);">Losing clients to 1 million+ competing cleaning businesses <span style="font-size: 0.7rem; opacity: 0.6;">(IBISWorld)</span></span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: #dc2626; font-weight: 600; margin-top: 0.125rem;">❌</span>
+                                    <span style="color: var(--gray-700);">Inconsistent pricing that leaves money on the table</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: #dc2626; font-weight: 600; margin-top: 0.125rem;">❌</span>
+                                    <span style="color: var(--gray-700);">Unprofessional proposals that don't win trust</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="background: linear-gradient(135deg, var(--primary-light), #ecfdf5); padding: 2rem; border-radius: 1rem; border: 2px solid var(--primary);">
+                            <h3 style="color: var(--primary-dark); font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">This is why they book you:</h3>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: var(--primary); font-weight: 600; margin-top: 0.125rem;">✅</span>
+                                    <span style="color: var(--gray-800); font-weight: 500;">Professional estimates in 30 seconds</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: var(--primary); font-weight: 600; margin-top: 0.125rem;">✅</span>
+                                    <span style="color: var(--gray-800); font-weight: 500;">Win more clients with branded proposals</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: var(--primary); font-weight: 600; margin-top: 0.125rem;">✅</span>
+                                    <span style="color: var(--gray-800); font-weight: 500;">Consistent, profitable pricing every time</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                                    <span style="color: var(--primary); font-weight: 600; margin-top: 0.125rem;">✅</span>
+                                    <span style="color: var(--gray-800); font-weight: 500;">Look as professional as a franchise — without the fees</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-header">
+                <h2>Run Your Business Like a Pro — From Your Phone</h2>
+                <p>Estimates. Proposals. Clients. Schedules. Checklists. All in one place. No app download, no training, no IT department needed.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Win More Jobs</h3>
+                    <p>Intelligent pricing based on property type, square footage, and services. Built-in frequency discounts and add-on pricing that helps you close more deals.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Look Professional Instantly</h3>
+                    <p>Generate branded PDF proposals instantly. Include your logo, terms, and itemized pricing that clients can accept with one click.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>Never Miss a Detail</h3>
+                    <p>Pre-built templates for every cleaning type. Assign tasks to team members and ensure consistent service quality that keeps clients coming back.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Know Every Client</h3>
+                    <p>Simple CRM to track clients, service history, and notes. Never lose track of important client details or miss opportunities for upsells.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3>Fill Your Calendar</h3>
+                    <p>Visual calendar for recurring cleanings. Color-coded by client, automatic conflict detection, and route optimization to maximize your earnings.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>See Your Money</h3>
+                    <p>Track monthly revenue, conversion rates, and top clients. See your business performance at a glance and identify growth opportunities.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Custom Pricing</h3>
+                    <p>Set your own rates per square foot, room, or service type. Adjust pricing for different markets and services.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Optimized</h3>
+                    <p>Works perfectly on your phone. Create estimates on-site, update schedules on-the-go, and manage your business anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>One Price. Everything Included.</h2>
+                <p style="font-size: 1.25rem; color: var(--primary-dark); font-weight: 600; margin-bottom: 1rem;">Start free today. Upgrade only when it's making you money.</p>
+                <p style="margin-bottom: 0.5rem;">No hidden fees. No per-estimate charges. No credit card to start.</p>
+                <p style="margin-bottom: 2rem; background: var(--primary-light); display: inline-block; padding: 0.5rem 1.25rem; border-radius: 2rem; font-weight: 600; color: var(--primary-dark); font-size: 0.9rem;">🎉 Your first 3 estimates are completely free — no account upgrade needed</p>
+                <div class="pricing-toggle">
+                    <span>Monthly</span>
+                    <div class="toggle-switch" id="pricing-toggle" role="switch" aria-checked="false" tabindex="0">
+                        <div class="toggle-slider"></div>
+                    </div>
+                    <span>Annual <span style="color: var(--primary); font-weight: 600;">(Save $58/year)</span></span>
+                </div>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Free Forever</h3>
+                    <p>Not a trial. Actually free. No credit card.</p>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">forever</div>
+                    <ul class="pricing-features">
+                        <li>3 estimates per month</li>
+                        <li>Basic calculator</li>
+                        <li>PDF proposals</li>
+                        <li>5 clients</li>
+                        <li>Email support</li>
+                    </ul>
+                    <div style="border-top: 1px dashed var(--gray-200); margin: 1rem 0; padding-top: 1rem;">
+                        <p style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; font-weight: 600;">Not included in Free:</p>
+                        <ul style="list-style: none; text-align: left; color: var(--gray-400); font-size: 0.875rem;">
+                            <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;"><span style="color: var(--gray-300);">—</span> Branded proposals</li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;"><span style="color: var(--gray-300);">—</span> Cleaning checklists</li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gray-300);">—</span> Schedule builder</li>
+                        </ul>
+                    </div>
+                    <a href="auth.html?mode=signup" class="btn btn-outline" style="width: 100%;">Start Free</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <p>For growing cleaning businesses</p>
+                    <div class="pricing-price" id="pro-price">$29</div>
+                    <div class="pricing-period" id="pro-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited estimates</li>
+                        <li>All calculator features</li>
+                        <li>Branded proposals</li>
+                        <li>Unlimited clients</li>
+                        <li>Cleaning checklists</li>
+                        <li>Schedule builder</li>
+                        <li>Revenue dashboard</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <div style="margin-bottom: 1.5rem;">
+                        <a href="https://buy.stripe.com/5kQ5kF91QcJhaI250I1sQ00" id="subscribe-btn" class="btn btn-primary" style="width: 100%;">Subscribe Monthly - $29/mo</a>
+                        <p style="color: var(--gray-600); font-size: 0.875rem; margin-top: 0.75rem; text-align: center;">Cancel anytime, no questions asked</p>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p>For large cleaning operations</p>
+                    <div class="pricing-price">Custom</div>
+                    <div class="pricing-period">contact us</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Professional</li>
+                        <li>Multi-location support</li>
+                        <li>Team management</li>
+                        <li>API access</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <a href="mailto:sales@cleanlyquote.com" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What if I'm not tech-savvy?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        If you can use a smartphone, you can use CleanlyQuote. We designed it to be simpler than most apps you already use. The estimate form is straightforward — enter the property details, pick your services, and you're done.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Will this work for my type of cleaning business?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! Whether you do residential, commercial, Airbnb, post-construction, or move-out cleaning, CleanlyQuote adapts to your business. You can customize pricing, services, and templates for any cleaning type you offer.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How accurate is the estimate calculator?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Our calculator uses adjustable pricing that you customize to match your local market and rates. Set your per-room or per-square-foot prices, add-on costs, and tax rate. Every estimate reflects your actual pricing — not generic defaults.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I use my own logo and branding?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely! Upload your logo, set your company colors, and customize your proposal templates. All estimates and proposals will reflect your professional brand.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is my data secure and private?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. All data is encrypted in transit and at rest. We use bank-level security and never share your client information with third parties. Your business data stays private.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I export my data if I need to?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, you can export all your data as JSON or CSV files at any time. We believe in data portability - you should always own your business information.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer phone or chat support?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        All plans include email support. Professional and Enterprise plans get faster response times. We're a small team and we actually read every message.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I cancel anytime?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, no contracts or cancellation fees. You can cancel anytime from your account settings. Annual subscribers get a prorated refund for unused time.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is there a mobile app?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        CleanlyQuote works perfectly in your mobile browser - no app download required. It's fully responsive and optimized for phones and tablets. Add it to your home screen for app-like experience.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I import existing client data?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, you can import client data via CSV upload or add clients manually. The interface makes it easy to get started with your existing client list.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Your Next Client Is Requesting Quotes Right Now</h2>
+            <p>Every hour without CleanlyQuote is another job going to the cleaner who replies faster with a better-looking proposal.</p>
+            <a href="auth.html?mode=signup" class="btn btn-lg" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;">Create Your First Estimate — It's Free</a>
+            <p style="margin-top: 1rem; opacity: 0.9; font-size: 0.95rem;">Free forever plan · No credit card · Set up in 2 minutes</p>
+            <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.8rem; max-width: 600px; margin-left: auto; margin-right: auto;">The US cleaning industry generates $108B+ annually across 1M+ businesses. Competition is intense — the businesses that look professional and respond fast are the ones that grow. <span style="opacity: 0.7;">(Sources: IBISWorld 2025, MIT Lead Response Study)</span></p>
+        </div>
+    </section>
+
+    <!-- Exit Intent Bar -->
+    <div class="exit-intent-bar" id="exit-intent-bar">
+        <button class="exit-intent-close" onclick="hideExitIntent()" aria-label="Close">×</button>
+        <div class="exit-intent-content">
+            <span>🎯 Create your first estimate in 30 seconds — completely free, no credit card</span>
+            <a href="auth.html?mode=signup" class="btn" style="background: white; color: var(--primary); margin: 0;">Start Free →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.5 13.09l1.41 1.41-6.36 6.37c-.55.55-1.44.55-2 0-.55-.55-.55-1.44 0-2L9.5 13.09zM5.5 11.09l6.36-6.37c.55-.55 1.44-.55 2 0 .55.55.55 1.44 0 2L7.91 12.5 5.5 11.09z" fill="currentColor"/>
+                            <path d="M17.5 8c1.38 0 2.5-1.12 2.5-2.5S18.88 3 17.5 3 15 4.12 15 5.5 16.12 8 17.5 8z" fill="currentColor"/>
+                            <path d="M12.5 4.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z" fill="currentColor"/>
+                            <path d="M19 21l2-8-2.5-2.5L16 13l3 8z" fill="currentColor"/>
+                        </svg>
+                        CleanlyQuote
+                    </a>
+                    <p>Professional cleaning business software that helps you create estimates, manage clients, and grow your business.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="auth.html">App</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:help@cleanlyquote.com">Help Center</a></li>
+                        <li><a href="mailto:support@cleanlyquote.com">Contact Support</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="mailto:training@cleanlyquote.com">Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                        <li><a href="/cookies.html">Cookie Policy</a></li>
+                        <li><a href="/security.html">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 CleanlyQuote by Convergence Strategy Partners LLC. All rights reserved. Made with ❤️ for cleaning professionals.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // SECURITY: Input Sanitization
+        // ============================================
+        function sanitizeHTML(str) {
+            if (typeof str !== 'string') return '';
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // ============================================
+        // Calculator functionality
+        // ============================================
+        function updateEstimate() {
+            const propertyType = document.getElementById('property-type').value;
+            const squareFootage = Math.min(Math.max(parseInt(document.getElementById('square-footage').value) || 0, 0), 100000);
+            const serviceType = document.getElementById('service-type').value;
+            const frequency = document.getElementById('frequency').value;
+            
+            const baseRates = {
+                residential: { standard: 0.10, deep: 0.15, 'move-out': 0.20 },
+                commercial: { standard: 0.08, deep: 0.12, 'move-out': 0.16 },
+                airbnb: { standard: 0.12, deep: 0.18, 'move-out': 0.22 }
+            };
+            
+            let basePrice = squareFootage * baseRates[propertyType][serviceType];
+            
+            let addOns = 0;
+            document.querySelectorAll('.addon-item input[type="checkbox"]:checked').forEach(checkbox => {
+                addOns += parseInt(checkbox.dataset.price) || 0;
+            });
+            
+            let total = basePrice + addOns;
+            
+            if (frequency === 'weekly') total *= 0.85;
+            else if (frequency === 'biweekly') total *= 0.90;
+            else if (frequency === 'monthly') total *= 0.95;
+            
+            const priceEl = document.getElementById('estimate-price');
+            priceEl.textContent = '$' + Math.round(total);
+            priceEl.classList.add('success-animation');
+            setTimeout(() => priceEl.classList.remove('success-animation'), 400);
+        }
+        
+        // Attach event listeners
+        document.getElementById('property-type').addEventListener('change', updateEstimate);
+        document.getElementById('square-footage').addEventListener('input', updateEstimate);
+        document.getElementById('service-type').addEventListener('change', updateEstimate);
+        document.getElementById('frequency').addEventListener('change', updateEstimate);
+        document.querySelectorAll('.addon-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateEstimate);
+        });
+        
+        // ============================================
+        // FAQ functionality
+        // ============================================
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                icon.classList.remove('rotate');
+            } else {
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate'));
+                answer.classList.add('show');
+                icon.classList.add('rotate');
+            }
+        }
+        
+        // ============================================
+        // Pricing toggle
+        // ============================================
+        const pricingToggle = document.getElementById('pricing-toggle');
+        const MONTHLY_LINK = 'https://buy.stripe.com/5kQ5kF91QcJhaI250I1sQ00';
+        const ANNUAL_LINK = 'https://buy.stripe.com/fZu4gBema4cL6rMdxe1sQ02';
+        
+        pricingToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const isAnnual = this.classList.contains('active');
+            this.setAttribute('aria-checked', isAnnual);
+            document.getElementById('pro-price').textContent = isAnnual ? '$290' : '$29';
+            document.getElementById('pro-period').textContent = isAnnual ? 'per year (save $58!)' : 'per month';
+            
+            // Update the actual checkout link
+            const subscribeBtn = document.getElementById('subscribe-btn');
+            subscribeBtn.href = isAnnual ? ANNUAL_LINK : MONTHLY_LINK;
+            subscribeBtn.textContent = isAnnual ? 'Subscribe Annually - $290/yr' : 'Subscribe Monthly - $29/mo';
+        });
+
+        pricingToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+        
+        // ============================================
+        // Smooth scrolling for anchor links
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // ============================================
+        // Header scroll effect and sticky CTA
+        // ============================================
+        let hasPassedHero = false;
+        let hasShownExitIntent = false;
+        
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const stickyCTA = document.getElementById('header-sticky-cta');
+            const hero = document.querySelector('.hero');
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            const scrollPosition = window.scrollY;
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+            
+            if (scrollPosition > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+            
+            if (scrollPosition > heroBottom && !hasPassedHero) {
+                stickyCTA.classList.add('visible');
+                hasPassedHero = true;
+            } else if (scrollPosition <= heroBottom && hasPassedHero) {
+                stickyCTA.classList.remove('visible');
+                hasPassedHero = false;
+            }
+            
+            if (scrollPercentage > 70 && !hasShownExitIntent) {
+                setTimeout(() => {
+                    document.getElementById('exit-intent-bar').classList.add('visible');
+                    hasShownExitIntent = true;
+                }, 1000);
+            }
+        });
+        
+        function hideExitIntent() {
+            document.getElementById('exit-intent-bar').classList.remove('visible');
+        }
+        
+        // Initialize estimate
+        updateEstimate();
+
+        // ============================================
+        // Intersection Observer for fade-in
+        // ============================================
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('section').forEach(s => {
+            s.style.opacity = '0';
+            s.style.transform = 'translateY(20px)';
+            s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(s);
+        });
+
+        // Make hero visible immediately
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
+
+        // Mobile menu functions
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            mobileNav.classList.toggle('show');
+            menuBtn.textContent = mobileNav.classList.contains('show') ? '✕' : '☰';
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            mobileNav.classList.remove('show');
+            menuBtn.textContent = '☰';
+        }
+
+        // Close mobile menu on resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
