@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "directoryListing": false,
   "rewrites": [
-    { "source": "proposal/**", "destination": "/proposal.html" }
+    { "source": "proposal/:id", "destination": "/proposal.html" }
   ],
   "headers": [
     {
