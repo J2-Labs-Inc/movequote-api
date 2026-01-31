@@ -2,6 +2,9 @@
   "public": "public",
   "cleanUrls": true,
   "directoryListing": false,
+  "rewrites": [
+    { "source": "/proposal/**", "destination": "/proposal.html" }
+  ],
   "headers": [
     {
       "source": "**/*",
