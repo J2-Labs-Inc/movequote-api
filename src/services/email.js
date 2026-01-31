@@ -92,10 +92,10 @@ async function sendWelcomeEmail(user) {
     </ul>
 
     <p style="text-align: center; margin: 30px 0;">
-      <a href="${APP_URL}/dashboard" class="btn">Go to Dashboard →</a>
+      <a href="${APP_URL}/app" class="btn">Go to Dashboard →</a>
     </p>
 
-    <p>Need unlimited quotes plus custom branding? <a href="${APP_URL}/dashboard" style="color: ${BRAND_GREEN}; font-weight: 600;">Upgrade to Professional</a> for just $29/month.</p>
+    <p>Need unlimited quotes plus custom branding? <a href="${APP_URL}/app" style="color: ${BRAND_GREEN}; font-weight: 600;">Upgrade to Professional</a> for just $29/month.</p>
     
     <p>Happy quoting!<br><strong>The CleanlyQuote Team</strong></p>
   `;
@@ -308,7 +308,7 @@ async function sendPaymentConfirmationEmail(user, subscriptionDetails = {}) {
     </div>
 
     <p style="text-align: center; margin: 30px 0;">
-      <a href="${APP_URL}/dashboard" class="btn">Start Creating Quotes →</a>
+      <a href="${APP_URL}/app" class="btn">Start Creating Quotes →</a>
     </p>
 
     <p style="font-size: 14px; color: #6b7280;">Your subscription will automatically renew each month. You can manage or cancel your subscription anytime from your account settings.</p>
